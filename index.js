@@ -8,9 +8,15 @@ replInstance.eval = awaitingEval;
 function awaitingEval(cmd, context, filename, callback) {
   cmd = `(async () => ${cmd})()`;
   originalEval.call(this, cmd, context, filename, async function(err,value) {
-    if (!err && value && typeof value.then === 'function') {
-      value = await value;
+    if (err) {
+      callback.call(this, err, null);
+    } else {
+      try {
+        value = await value;
+        callback.call(this, err, value);
+      } catch (error) {
+        callback.call(this, error, null);
+      }
     }
-    callback.call(this, err, value);
   });
 }
