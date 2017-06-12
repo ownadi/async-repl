@@ -56,5 +56,22 @@ describe("async rewriting", function() {
     expect(value).to.deep.equal({ a: 1 });
   });
 
+  // This test fails because of
+  //    https://github.com/benjamn/recast/issues/412
+  it.skip("supports object destructuring assignment", async function() {
+    let value = await rewriteAndRun('let { a, b } = { a: 1, b: await 2 }');
+    expect(value).not.ok;
+    expect(context.a).to.equal(1);
+    expect(context.b).to.equal(2);
+  });
+
+  it("supports array destructuring assignment", async function() {
+    let value = await rewriteAndRun('let [ a, b, ...c ] = [1, await 2, 3, await 4]');
+    expect(value).not.ok;
+    expect(context.a).to.equal(1);
+    expect(context.b).to.equal(2);
+    expect(context.c).to.deep.equal([3,4]);
+  });
+
 
 });
