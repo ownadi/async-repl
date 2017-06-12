@@ -73,5 +73,10 @@ describe("async rewriting", function() {
     expect(context.c).to.deep.equal([3,4]);
   });
 
+  it("allows you to access an unresolved promise via a local variable", async function() {
+    let value = await rewriteAndRun('let p = new Promise(() => {})');
+    expect(value).not.ok;
+    expect(context.p).property('then').is.a('function');
+  });
 
 });

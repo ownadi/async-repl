@@ -23,4 +23,25 @@ async>
 
 ## Caveats
 
-This tool doesn't support multi-line input.
+* This tool doesn't support multi-line input.
+* Top-level object destructuring assignment like:
+
+        let { x } = await someThing()
+
+    doesn't currently work due to a bug in `recast` (see test suite), but you can workaround like:
+
+        ({x} = await someThing())
+
+* We necessarily resolve the top-level expression promise for you, so if you don't want to wait for resolution you should make sure you're not returning the promise as an expression.
+
+        # This will not block because it's a statement
+        let myPromise = makePromise()
+
+        # This will block because it's an expression
+        otherPromise = makePromise()
+
+        # This will block because now we're using the promise value as an expression
+        myPromise
+
+
+
