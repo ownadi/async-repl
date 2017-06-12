@@ -1,0 +1,27 @@
+{
+  "name": "async-repl",
+  "version": "0.1.0",
+  "description": "Node repl that supports \"await\".",
+  "bin": {
+    "async-repl": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ef4/async-repl.git"
+  },
+  "keywords": [
+    "async",
+    "repl",
+    "promise",
+    "await"
+  ],
+  "author": "Edward Faulkner <edward@eaf4.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ef4/async-repl/issues"
+  },
+  "homepage": "https://github.com/ef4/async-repl#readme"
+}
