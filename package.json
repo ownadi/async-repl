@@ -26,7 +26,8 @@
   "homepage": "https://github.com/ef4/async-repl#readme",
   "dependencies": {
     "acorn": "^5.0.3",
-    "recast": "^0.12.5"
+    "recast": "^0.12.5",
+    "repl.history": "^0.1.4"
   },
   "devDependencies": {
     "chai": "^4.0.2",

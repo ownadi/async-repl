@@ -823,6 +823,10 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
+repl.history@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/repl.history/-/repl.history-0.1.4.tgz#80367171f3781d6e4299c71758c253097f5d5832"
+
 replaceall@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/replaceall/-/replaceall-0.1.6.tgz#81d81ac7aeb72d7f5c4942adf2697a3220688d8e"
