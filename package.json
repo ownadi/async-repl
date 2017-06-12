@@ -6,7 +6,7 @@
     "async-repl": "index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/ef4/async-repl/issues"
   },
-  "homepage": "https://github.com/ef4/async-repl#readme"
+  "homepage": "https://github.com/ef4/async-repl#readme",
+  "dependencies": {
+    "acorn": "^5.0.3",
+    "recast": "^0.12.5"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "mocha-eslint": "^3.0.1"
+  }
 }

@@ -3,10 +3,12 @@
 const repl = require('repl');
 const replInstance = repl.start({ prompt: 'async> ' });
 const originalEval = replInstance.eval;
+const rewrite = require('./rewrite');
+
 replInstance.eval = awaitingEval;
 
 function awaitingEval(cmd, context, filename, callback) {
-  cmd = `(async () => ${cmd})()`;
+  cmd = rewrite(cmd);
   originalEval.call(this, cmd, context, filename, async function(err,value) {
     if (err) {
       callback.call(this, err, null);
