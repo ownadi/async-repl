@@ -8,7 +8,11 @@ const rewrite = require('./rewrite');
 replInstance.eval = awaitingEval;
 
 function awaitingEval(cmd, context, filename, callback) {
-  cmd = rewrite(cmd);
+  try {
+    cmd = rewrite(cmd);
+  } catch (err) {
+    callback(err);
+  }
   originalEval.call(this, cmd, context, filename, async function(err,value) {
     if (err) {
       callback.call(this, err, null);
