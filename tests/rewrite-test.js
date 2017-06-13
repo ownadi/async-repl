@@ -79,4 +79,9 @@ describe("async rewriting", function() {
     expect(context.p).property('then').is.a('function');
   });
 
+  it("can access a property after awaiting", async function() {
+    let value = await rewriteAndRun('(await new Promise(r => r({ x : 1}))).x');
+    expect(value).to.equal(1);
+  });
+
 });

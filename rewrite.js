@@ -1,13 +1,5 @@
 const recast = require('recast');
-const acorn = require('acorn');
-
-const parser = {
-  parse(input) {
-    return acorn.parse(input, {
-      ecmaVersion: 8
-    });
-  }
-};
+const parser = require('babylon');
 
 function withinAsyncContext(c) {
   return `(async () => { ${c} })()`;

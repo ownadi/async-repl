@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/ef4/async-repl#readme",
   "dependencies": {
-    "acorn": "^5.0.3",
+    "babylon": "^6.17.3",
+    "debug": "^2.6.8",
     "recast": "^0.12.5",
     "repl.history": "^0.1.4"
   },
