@@ -47,7 +47,5 @@ async>
 
       async> const a = 1
       undefined
-      async> const a = 2
-      undefined
-      async> a
+      async> a = 2
       2
