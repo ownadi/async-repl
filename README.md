@@ -43,5 +43,9 @@ async>
         # This will block because now we're using the promise value as an expression
         myPromise
 
+* `const` variables in the repl scope can be overridden
 
-
+      async> const a = 1
+      undefined
+      async> a = 2
+      2
