@@ -6,7 +6,7 @@ This uses the native async/await support in Node 7.x and newer to let you `await
 
 `npm install -g async-repl`
 
-## Example
+## Examples
 
 ```
 $ async-repl
@@ -19,6 +19,13 @@ undefined
 async> x
 3
 async>
+```
+
+```js
+const repl = require('repl');
+const stubber = require('async-repl/stubber');
+const replInstance = repl.start({ prompt: 'my-fancy-repl> ' });
+stubber(replInstance);
 ```
 
 ## Caveats
