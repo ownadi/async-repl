@@ -2,6 +2,10 @@
 
 This uses the native async/await support in Node 7.x and newer to let you `await` promises in the repl ("read-eval-print-loop" -- the interactive Node command line).
 
+## Native Alternative in Node 10
+
+Note: Node 10 added the command line flag `--experimental-repl-await` which allows await support. That may be a good option for new projects or usages.
+
 ## Install
 
 `npm install -g async-repl`
